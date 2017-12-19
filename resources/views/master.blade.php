@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="/images/sandeep.jpg">
 
-    <title>Justified Nav Template for Bootstrap</title>
+    <title>Lara-World</title>
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -28,9 +28,9 @@
   <body>
 
     <div class="container">
-
+</br>
       <div class="masthead">
-        <h3 class="text-muted">PHP World</h3>
+        <h2 class="text-muted">Lara-World</h2> <hr></hr>
 
         @include('partials.nav')
 
@@ -38,15 +38,15 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+        <h1>Welcome to Lara-World</h1>
+        <p class="lead">This blog is all about Laravel stuff. Who are Epistemophile about Laravel. Welcome for you guys! I'm just Sharing my skills here. Thanks all. Work Hard n Learn more.  </p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
       </div>
 
       @yield('content')
 
     </div> <!-- /container -->
-  </body>
+  </body> </br>
   <div class="container">
    @include('partials.footer')
   </div>
