@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Article;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Input;
+
 class ArticleController extends Controller
 {
     /**
@@ -14,8 +16,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
-         return view('article.index');
+        $posts = Article::latest()->paginate(3);
+
+        return view('article.index',compact('posts'));
     }
 
     /**
@@ -25,6 +28,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
+
         return view('article.create');
 
     }
@@ -36,8 +40,16 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    { 
+        $this->validate(request(), [
+            'title' => 'required',
+            'body'  => 'required'
+
+        ]);
+
+        Article::create(request(['title','body']));
+
+        return redirect('/');
     }
 
     /**
@@ -46,9 +58,11 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show($id)
     {
-        //
+        $posts = Article::find($id);
+
+        return view('article.show',compact('posts'));
     }
 
     /**

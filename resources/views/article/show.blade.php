@@ -5,11 +5,9 @@
 
 <div class="container">
   
-    @foreach ($posts as $post)
+    	<h1> {{ $posts->title }} </h1>
 
-      @include('article.post')
-
-    @endforeach
+    	<p> {{ $posts->body }} </p>
 
 </div>
 
