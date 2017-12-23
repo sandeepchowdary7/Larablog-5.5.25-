@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
 use App\Comment;
-
+use App\Article;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 
-class ArticleController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $posts = Article::latest()->paginate(3);
-
-        return view('article.index',compact('posts'));
+        //
     }
 
     /**
@@ -29,9 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-
-        return view('article.create');
-
+        //
     }
 
     /**
@@ -40,39 +34,40 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    { 
-        $this->validate(request(), [
-            'title' => 'required',
-            'body'  => 'required'
+    public function store(Article $article)
+    {
+        $this->validate(request(),['body' => 'required|min:2']);
 
+         $comment = $article->comment->create([
+        'body' => request('body'),
         ]);
 
-        Article::create(request(['title','body']));
+        //     $article = Comment::create([
+        //     'body' => request('body'),
+        //     'article_id' => $article->id,
+        // ]);
 
-        return redirect('/');
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $comment)
     {
-        $posts = Article::find($id);
-
-        return view('article.show',compact('posts'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -81,10 +76,11 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Article  $article
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+     
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -92,11 +88,12 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Article  $article
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy(Comment $comment)
     {
         //
     }
 }
+

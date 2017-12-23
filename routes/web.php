@@ -12,10 +12,19 @@
 */
 
 Route::get('/post', 'ArticleController@index');
-Route::get('/home', 'ArticleController@index');
+// Route::get('/home', 'ArticleController@index');
 
 Route::get('/post/{id}', 'ArticleController@show');
 
 Route::get('/posts/create', 'ArticleController@create');
 
 Route::post('/posts', 'ArticleController@store');
+
+Route::post('/post/{article}/comment', 'CommentController@store');
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
