@@ -38,14 +38,13 @@ class CommentController extends Controller
     {
         $this->validate(request(),['body' => 'required|min:2']);
 
-         $comment = $article->comment->create([
-        'body' => request('body'),
-        ]);
+         $comment = $article->comments()->create([
 
-        //     $article = Comment::create([
-        //     'body' => request('body'),
-        //     'article_id' => $article->id,
-        // ]);
+        'body' => request('body'),
+
+        'article_id' => $article->id,
+        
+        ]);
 
         return back();
     }

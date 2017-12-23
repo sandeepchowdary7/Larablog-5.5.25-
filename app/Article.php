@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
    public $timestamps = TRUE;
-	protected $table = 'articles';
+   protected $table = 'articles';
 
 	/**
 	 * The attributes that are mass assignable.

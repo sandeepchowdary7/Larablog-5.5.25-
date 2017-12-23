@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/article', 'ArticleController@index');
+Route::get('/articles', 'ArticleController@index');
 // Route::get('/home', 'ArticleController@index');
 
-Route::get('/article/{id}', 'ArticleController@show');
+Route::get('/article/{article}', 'ArticleController@show');
 
 Route::get('/articles/create', 'ArticleController@create');
 

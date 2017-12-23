@@ -5,7 +5,7 @@
 
 <div class="container">
   
-    @foreach ($article as $post)
+    @foreach ($article as $article)
 
       @include('article.post')
 

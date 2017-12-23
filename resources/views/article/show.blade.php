@@ -41,7 +41,7 @@
 
 		<div class="card-block">
 
-			<form method="POST" action="{{ url ("/article/{$article->id}/comment") }}">> 
+			<form method="POST" action="{{ url ("/article/{$article->id}/comment") }}"> 
 				{{ csrf_field() }}
 
 				<div class="form-group">

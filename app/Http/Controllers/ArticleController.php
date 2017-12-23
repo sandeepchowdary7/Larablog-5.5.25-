@@ -43,6 +43,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     { 
         $this->validate(request(), [
+
             'title' => 'required',
             'body'  => 'required'
 
@@ -59,15 +60,12 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $articleId)
+
+    public function show(Article $article)
     {
-        // $articles = Article::find($id);
 
-        // return view('article.show',compact('articles'));
+        return view('article.show',compact('article'));
 
-         $article = Article::find($articleId);
-
-    return view('article.show',compact('article'));
     }
 
     /**
