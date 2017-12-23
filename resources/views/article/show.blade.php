@@ -5,9 +5,9 @@
 
 <div class="container">
 
-	<h1> {{ $posts->title }} </h1>
+	<h1> {{ $article->title }} </h1>
 
-	<p> {{ $posts->body }} </p>
+	<p> {{ $article->body }} </p>
 
 	<hr></hr>
 
@@ -15,7 +15,7 @@
 
 		<ul class="list-group"> 
 
-			@foreach($posts->comments as $comment)
+			@foreach($article->comments as $comment)
 
 			<li class="list-group-item">
 
@@ -41,7 +41,7 @@
 
 		<div class="card-block">
 
-			<form method="POST" action="{{ url ("/post/{$article->id}/comment") }}">> 
+			<form method="POST" action="{{ url ("/article/{$article->id}/comment") }}">> 
 				{{ csrf_field() }}
 
 				<div class="form-group">

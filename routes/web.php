@@ -11,16 +11,16 @@
 |
 */
 
-Route::get('/post', 'ArticleController@index');
+Route::get('/article', 'ArticleController@index');
 // Route::get('/home', 'ArticleController@index');
 
-Route::get('/post/{id}', 'ArticleController@show');
+Route::get('/article/{id}', 'ArticleController@show');
 
-Route::get('/posts/create', 'ArticleController@create');
+Route::get('/articles/create', 'ArticleController@create');
 
-Route::post('/posts', 'ArticleController@store');
+Route::post('/articles', 'ArticleController@store');
 
-Route::post('/post/{article}/comment', 'CommentController@store');
+Route::post('/article/{article}/comment', 'CommentController@store');
 
 
 

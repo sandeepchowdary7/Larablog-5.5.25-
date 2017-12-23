@@ -17,9 +17,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $posts = Article::latest()->paginate(3);
+        $article = Article::latest()->paginate(3);
 
-        return view('article.index',compact('posts'));
+        return view('article.index',compact('article'));
     }
 
     /**
@@ -59,11 +59,15 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Article $articleId)
     {
-        $posts = Article::find($id);
+        // $articles = Article::find($id);
 
-        return view('article.show',compact('posts'));
+        // return view('article.show',compact('articles'));
+
+         $article = Article::find($articleId);
+
+    return view('article.show',compact('article'));
     }
 
     /**
@@ -80,7 +84,7 @@ class ArticleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $requets
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
