@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/articles', 'ArticleController@index');
-// Route::get('/home', 'ArticleController@index');
+Route::get('/articles', 'ArticleController@index')->name('main');
+Route::get('/', 'ArticleController@index')->name('main');
 
 Route::get('/article/{article}', 'ArticleController@show');
 
@@ -28,3 +28,18 @@ Route::post('/article/{article}/comment', 'CommentController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Registration Controller
+Route::get('/register', 'RegistrationController@create');
+
+Route::post('/register', 'RegistrationController@store');
+
+
+//Sessions Contoller
+Route::get('/login', 'SessionsController@create');
+
+Route::get('/login', 'SessionsController@store');
+
+Route::get('/logout', 'SessionsController@destory');
+

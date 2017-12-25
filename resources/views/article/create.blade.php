@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form method="POST" action="{{ url('article')}}">
+<form method="POST" action="{{ url('articles')}}">
 
 	{{ csrf_field() }}
 

@@ -15,6 +15,14 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+
+        return back();
+
+    }
     public function index()
     {
         $article = Article::latest()->paginate(3);
@@ -49,9 +57,13 @@ class ArticleController extends Controller
 
         ]);
 
-        Article::create(request(['title','body']));
+        Article::create([
+            'title' => request('title'),
+            'body' => request('body'),
+            'user_id' => auth()->id
+        ]);
 
-        return redirect('/');
+        return redirect('/articles');
     }
 
     /**
