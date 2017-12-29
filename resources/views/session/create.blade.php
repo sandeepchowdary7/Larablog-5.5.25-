@@ -10,7 +10,7 @@
 
 		<label for="Email">Email</label>
 
-		<input type="email" class="form-control" placeholder="Email" name='email' required>
+		<input type="email" class="form-control" placeholder="Email" name='email' autocomplete="off" required>
 
 	</div>
 
@@ -18,7 +18,7 @@
 
 		<label for="password">Password</label>
 
-		<input type="password" class="form-control" placeholder="password" name='password' required>
+		<input type="password" class="form-control" placeholder="password" name='password' autocomplete="off" required>
 
 	</div>
 

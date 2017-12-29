@@ -20,6 +20,9 @@
                 <a class="nav-link" href="#">Resources</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="{{ url('/') }}">Archives</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="{{ url('/register') }}">Register</a>
               </li>
               <li class="nav-item">
